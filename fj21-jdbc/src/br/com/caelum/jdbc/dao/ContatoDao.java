@@ -17,6 +17,7 @@ public class ContatoDao {
 	// conexao com o banco de dados.
 	private Connection connection;
 
+	// construtor
 	public ContatoDao() {
 		this.connection = new ConnectionFactory().getConnection();
 	}
@@ -38,7 +39,7 @@ public class ContatoDao {
 			stmt.close();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new DAOException(e);
 		}
 	}
 
@@ -56,7 +57,7 @@ public class ContatoDao {
 			stmt.close();
 
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new DAOException(e);
 		}
 
 	}
@@ -68,7 +69,7 @@ public class ContatoDao {
 			stmt.execute();
 			stmt.close();
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new DAOException(e);
 		}
 	}
 
@@ -103,7 +104,7 @@ public class ContatoDao {
 			stmt.close();
 			return contatos;
 		} catch (SQLException e) {
-			throw new RuntimeException(e);
+			throw new DAOException(e);
 		}
 	}
 }
