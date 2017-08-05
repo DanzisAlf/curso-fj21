@@ -21,7 +21,7 @@ public class OiMundo extends HttpServlet {
 		out.println("</head>");
 		out.println("<body>");
 		out.println("<h1> Oi Mundo Servlet</h1>");
-		out.println("<h2>A hora do sistema é " + Calendar.getInstance().getTimeInMillis() + "</h2>");
+		out.println("<h2>A hora do sistema é " + Calendar.getInstance().getTime() + "</h2>");
 		out.println("</body>");
 		out.println("</html>");
 
