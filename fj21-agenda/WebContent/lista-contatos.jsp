@@ -7,12 +7,15 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>lista contatos</title>
+
 </head>
+<header> <c:import url="cabecalho.jsp"></c:import> </header>
 <body>
-	<!-- cria dao -->
+
+	<%-- cria dao --%>
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
-		<!-- percorre contatos na tabela ele usa a variavel dao.getLista()-->
+		<%-- percorre contatos na tabela ele usa a variavel dao.getLista()--%>
 		<tr>
 			<td>Nome</td>
 			<td>Email</td>
@@ -21,22 +24,20 @@
 		</tr>
 
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr style="background-color: #${id.count % 2 == 0 ? '9999FF':'6666FF'}">
-			
-			<td>
-				<c:choose>
-					<c:when test="${empty contato.email}">
+			<tr style="background-color: #${id.count% 2== 0? '9999FF': '6666FF'">
+
+				<td><c:choose>
+						<c:when test="${empty contato.email}">
 					Sem email
 					</c:when>
-					<c:otherwise>
+						<c:otherwise>
 						com email
 					</c:otherwise>
-				</c:choose>
-				</td>
-			
-			
+					</c:choose></td>
+
+
 				<td>${contato.nome}</td>
-				
+
 				<c:if test="${empty contato.email }">
 					<td>Email nao cadastrado</td>
 				</c:if>
@@ -50,8 +51,8 @@
 						value="${contato.dataNascimento.time}" /></td>
 			</tr>
 		</c:forEach>
-
-		
 	</table>
 </body>
+<footer> <c:import url="rodape.jsp"></c:import> </footer>
+
 </html>
