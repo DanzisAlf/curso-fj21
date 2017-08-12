@@ -48,6 +48,8 @@
 				<td>${contato.endereco}</td>
 				<td><fmt:formatDate pattern="dd/MM/yyyy"
 						value="${contato.dataNascimento.time}" /></td>
+				<td>
+				<a href="mvc?logica=RemoveContatoLogic&id=${contato.id}&nome=${contato.nome}">Remover</a>
 			</tr>
 		</c:forEach>
 	</table>
