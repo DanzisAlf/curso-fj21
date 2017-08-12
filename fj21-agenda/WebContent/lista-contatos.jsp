@@ -7,9 +7,8 @@
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 <title>lista contatos</title>
-
+<c:import url="cabecalho.jsp"></c:import> 
 </head>
-<header> <c:import url="cabecalho.jsp"></c:import> </header>
 <body>
 
 	<%-- cria dao --%>
