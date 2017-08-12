@@ -20,7 +20,7 @@
 			<td>Data</td>
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr>
+			<tr style="background-color: #${id.count%2==0? '9999FF':'6666FF'}">
 				<td>${contato.nome}</td>
 				<c:if test="${empty contato.email }">
 					<td>Email nao cadastrado</td>
