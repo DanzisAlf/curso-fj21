@@ -26,7 +26,7 @@
 					<td>Email nao cadastrado</td>
 				</c:if>
 				<c:if test="${not empty contato.email }">
-					<td>${contato.email}</td>
+					<td><a href="mailto:${contato.email}">${contato.email}</a></td>
 				</c:if>
 				<td>${contato.endereco}</td>
 				<td><fmt:formatDate pattern="dd/MM/yyyy"
