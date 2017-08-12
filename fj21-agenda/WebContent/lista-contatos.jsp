@@ -16,8 +16,6 @@
 		<c:import url="cabecalho.jsp"></c:import> 
 	</header>
 
-	<%-- cria dao --%>
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
 		<%-- percorre contatos na tabela ele usa a variavel dao.getLista()--%>
 		
@@ -30,7 +28,7 @@
 			
 			</tr>
 		
-		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
+		<c:forEach var="contato" items="${contatos}" varStatus="id">
 			<tr style="background-color: ${ id.count% 2 == 0 ? 'cyan' : 'gray'  }">
 
 
