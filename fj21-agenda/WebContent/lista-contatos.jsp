@@ -20,16 +20,17 @@
 			<td>Data</td>
 		</tr>
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr>		
+			<tr>
 				<td>${contato.nome}</td>
 				<c:if test="${empty contato.email }">
-				<td>Email nao cadastrado</td>
+					<td>Email nao cadastrado</td>
 				</c:if>
 				<c:if test="${not empty contato.email }">
-				<td>${contato.email}</td>
+					<td>${contato.email}</td>
 				</c:if>
 				<td>${contato.endereco}</td>
-				<td><fmt:formatDate pattern="dd/MM/yyyy" value="${contato.dataNascimento.time}" /></td>
+				<td><fmt:formatDate pattern="dd/MM/yyyy"
+						value="${contato.dataNascimento.time}" /></td>
 			</tr>
 		</c:forEach>
 	</table>
