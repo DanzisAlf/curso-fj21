@@ -10,7 +10,7 @@
 </head>
 <body>
 	<!-- cria dao -->
-	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao"></jsp:useBean>
+	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
 		<!-- percorre contatos na tabela ele usa a variavel dao.getLista()-->
 		<tr>
@@ -19,20 +19,39 @@
 			<td>Endereco</td>
 			<td>Data</td>
 		</tr>
+
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr style="background-color: #${id.count%2==0? '9999FF':'6666FF'}">
+			<tr style="background-color: #${id.count % 2 == 0 ? '9999FF':'6666FF'}">
+			
+			<td>
+				<c:choose>
+					<c:when test="${empty contato.email}">
+					Sem email
+					</c:when>
+					<c:otherwise>
+						com email
+					</c:otherwise>
+				</c:choose>
+				</td>
+			
+			
 				<td>${contato.nome}</td>
+				
 				<c:if test="${empty contato.email }">
 					<td>Email nao cadastrado</td>
 				</c:if>
 				<c:if test="${not empty contato.email }">
 					<td><a href="mailto:${contato.email}">${contato.email}</a></td>
 				</c:if>
+
+
 				<td>${contato.endereco}</td>
 				<td><fmt:formatDate pattern="dd/MM/yyyy"
 						value="${contato.dataNascimento.time}" /></td>
 			</tr>
 		</c:forEach>
+
+		
 	</table>
 </body>
 </html>
