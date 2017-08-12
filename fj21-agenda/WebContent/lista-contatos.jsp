@@ -24,7 +24,7 @@
 		</tr>
 
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr style="background-color: #${id.count% 2== 0? '9999FF': '6666FF'">
+			<tr style="background-color: #${ id.count% 2 == 0 ? '9999FF' : '6666FF'  }">
 
 				<td><c:choose>
 						<c:when test="${empty contato.email}">

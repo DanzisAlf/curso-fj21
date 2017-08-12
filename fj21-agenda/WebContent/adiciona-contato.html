@@ -6,15 +6,19 @@
 </head>
 <body>
 	<h1>Adiciona Contato</h1>
-	<hr/>
-	<!--  por padrao ele deixa get - info na url -->
-	<form action ="adicionaContato" method="post">
-		Nome:<input type="text" name="nome" /><br />
-		E-mail:<input type="text" name="email" /><br />
-		Endereço:<input type="text" name="endereco" /><br />
-		Data Nascimento:<input type="text" name="dataNascimento" /><br />
+	<hr />
+	<!--  por padrao ele deixa get - info na url .servlet adicionaContato-->
+	<form action="adicionaContato" method="post">
 		
-		<input type="submit" value="Gravar" />
+		<label for="nome">Nome:</label> 
+		<input type="text" name="nome" placeholder="digite seu nome" id="nome" /><br />
+		 
+		E-mail:<input type="email" name="email" placeholder="digite seu email" /><br />
+		
+		Endereço:<input type="text" name="endereco"	placeholder="digite endereço" /><br /> 
+		
+		Data Nascimento:<input	type="text" name="dataNascimento" /><br /> <input type="submit"	value="Gravar" />
+	
 	</form>
 </body>
 </html>
