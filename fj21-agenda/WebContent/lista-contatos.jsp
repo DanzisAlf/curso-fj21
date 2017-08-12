@@ -19,7 +19,7 @@
 			<td>Endereco</td>
 			<td>Data</td>
 		</tr>
-		<c:forEach var="contato" items="${dao.lista}">
+		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
 			<tr>		
 				<td>${contato.nome}</td>
 				<td>${contato.email}</td>
