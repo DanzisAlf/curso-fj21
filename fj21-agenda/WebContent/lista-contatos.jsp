@@ -20,24 +20,19 @@
 	<jsp:useBean id="dao" class="br.com.caelum.agenda.dao.ContatoDao" />
 	<table>
 		<%-- percorre contatos na tabela ele usa a variavel dao.getLista()--%>
-		<tr>
-			<td>Nome</td>
-			<td>Email</td>
-			<td>Endereco</td>
-			<td>Data</td>
-		</tr>
-
+		
+			<tr>
+			
+				<td>Nome</td>
+				<td>Email</td>
+				<td>Endereco</td>
+				<td>Data</td>
+			
+			</tr>
+		
 		<c:forEach var="contato" items="${dao.lista}" varStatus="id">
-			<tr style="background-color: #${ id.count% 2 == 0 ? '9999FF' : '6666FF'  }">
+			<tr style="background-color: ${ id.count% 2 == 0 ? 'cyan' : 'gray'  }">
 
-				<td><c:choose>
-						<c:when test="${empty contato.email}">
-					Sem email
-					</c:when>
-						<c:otherwise>
-						com email
-					</c:otherwise>
-					</c:choose></td>
 
 
 				<td>${contato.nome}</td>
