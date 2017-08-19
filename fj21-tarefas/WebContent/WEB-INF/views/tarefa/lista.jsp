@@ -35,6 +35,16 @@
 			<td>
 			 	<fmt:formatDate value="${tarefa.dataFinalizacao.time}" pattern="dd/MM/yyyy" />
 			 </td>
+			 <td>
+			 	<form action="removeTarefa" method="post">
+			 		<input name="id" type="hidden" value="${tarefa.id}">
+			 		<button type="submit">Deletar</button>
+			 	</form>
+			 <td>
+			 	<form action="paginaAlteraTarefa" method="post">
+			 		<input name="id" type="hidden" value="${tarefa.id}">
+			 		<button type="submit">Alterar</button>
+			 	</form>
 		 </tr>
 	</c:forEach>
 	</table>
