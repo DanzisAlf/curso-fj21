@@ -2,8 +2,14 @@ package br.com.caelum.tarefas.modelo;
 
 import java.util.Calendar;
 
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
 public class Tarefa {
 	private Long id;
+	
+	@Size(min=5) @NotEmpty
 	private String descricao;
 	private boolean finalizado;
 	private Calendar dataFinalizacao;
