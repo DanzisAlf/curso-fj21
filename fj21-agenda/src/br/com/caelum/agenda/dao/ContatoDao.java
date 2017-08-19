@@ -9,18 +9,15 @@ import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
 
-import br.com.caelum.agenda.ConnectionFactory;
 import br.com.caelum.agenda.modelo.Contato;
 
 public class ContatoDao {
 	private Connection connection;
 
-	public ContatoDao() {
-		try {
-			this.connection = new ConnectionFactory().getConnection();
-		} catch (SQLException e) {
-			throw new RuntimeException(e);
-		}
+	public ContatoDao(Connection connection) {
+		// utiliza a conexao, e nao precisa instanciar por conta do filtro
+		this.connection = connection;
+
 	}
 
 	public void adiciona(Contato contato) {
@@ -47,20 +44,20 @@ public class ContatoDao {
 
 			ResultSet rs = stmt.executeQuery();
 
-			while(rs.next()) {
+			while (rs.next()) {
 				Contato contato = new Contato();
-				//popula o objeto contato
+				// popula o objeto contato
 				contato.setId(rs.getLong("id"));
 				contato.setNome(rs.getString("nome"));
 				contato.setEmail(rs.getString("email"));
 				contato.setEndereco(rs.getString("endereco"));
 
-				//popula a data de nascimento do contato, fazendo a conversao
+				// popula a data de nascimento do contato, fazendo a conversao
 				Calendar data = Calendar.getInstance();
 				data.setTime(rs.getDate("dataNascimento"));
 				contato.setDataNascimento(data);
 
-				//adiciona o contato na lista
+				// adiciona o contato na lista
 				contatos.add(contato);
 			}
 
