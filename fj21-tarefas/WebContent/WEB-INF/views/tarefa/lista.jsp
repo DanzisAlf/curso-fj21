@@ -33,8 +33,8 @@
 			<c:forEach items="${tarefas}" var="tarefa" varStatus="id">
 				<tr
 					style="background-color: ${id.count% 2 == 0 ? 'cyan' : 'gray'  }">
-					<td>${tarefa.id}</td>
-					<td>${tarefa.descricao}</td>
+					<td	style="color: ${id.count% 2 == 0 ? 'gray' : 'cyan'  }">${tarefa.id}</td>
+					<td	style="color: ${id.count% 2 == 0 ? 'gray' : 'cyan'  }">${tarefa.descricao}</td>
 					<c:if test="${tarefa.finalizado eq false}">
 						<td id="tarefa_${tarefa.id}">
 							<a href="#" onclick="finalizaAgora(${tarefa.id})">
@@ -45,7 +45,7 @@
 					<c:if test="${tarefa.finalizado eq true}">
 						<td> Finalizado</td>
 					</c:if>
-					<td><fmt:formatDate value="${tarefa.dataFinalizacao.time}"
+					<td	style="color: ${id.count% 2 == 0 ? 'gray' : 'cyan'  }"><fmt:formatDate value="${tarefa.dataFinalizacao.time}"
 							pattern="dd/MM/yyyy" /></td>
 					<td>
 						<form action="removeTarefa" method="post">
