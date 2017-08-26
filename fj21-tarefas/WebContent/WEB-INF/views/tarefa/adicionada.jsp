@@ -8,5 +8,6 @@
 </head>
 <body>
 	<h3>Tarefa Adicionada</h3>
+	<a href="listaTarefas">Ir para Lista de Tarefas</a>
 </body>
 </html>
