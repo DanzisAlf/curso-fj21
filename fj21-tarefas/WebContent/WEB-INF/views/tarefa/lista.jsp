@@ -61,5 +61,6 @@
 			</c:forEach>
 		</table>
 	</fieldset>
+	<a href="logout"> Sair do sistema</a>
 </body>
 </html>
